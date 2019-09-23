@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/double_the_bits.wav-70cd9a93c8af73544f65c66b7552b370.sample"
+
+[deps]
+
+source_file="res://title_screen/double_the_bits.wav"
+dest_files=[ "res://.import/double_the_bits.wav-70cd9a93c8af73544f65c66b7552b370.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
