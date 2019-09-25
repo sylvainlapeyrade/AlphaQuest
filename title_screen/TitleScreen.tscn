@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://title_screen/title_screen.gd" type="Script" id=1]
+[ext_resource path="res://title_screen/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://title_screen/images/logo.png" type="Texture" id=2]
 [ext_resource path="res://title_screen/buttons/NewGameButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://title_screen/buttons/ContinueButton.tscn" type="PackedScene" id=4]
 [ext_resource path="res://title_screen/buttons/OptionsButton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://title_screen/buttons/ExitButton.tscn" type="PackedScene" id=6]
-[ext_resource path="res://title_screen/images/characters.png" type="Texture" id=7]
+[ext_resource path="res://title_screen/images/frontimage.png" type="Texture" id=7]
 [ext_resource path="res://title_screen/fonts/montserrat_eb_24.tres" type="DynamicFont" id=8]
 [ext_resource path="res://title_screen/images/Liu-logo.png" type="Texture" id=9]
 [ext_resource path="res://fade_in/FadeIn.tscn" type="PackedScene" id=10]
@@ -43,6 +43,7 @@ size_flags_vertical = 3
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
 margin_right = 594.0
 margin_bottom = 385.0
+rect_min_size = Vector2( 300, 385 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 20
@@ -58,11 +59,13 @@ script = null
 margin_top = 122.0
 margin_right = 594.0
 margin_bottom = 182.0
+script = null
 
 [node name="OptionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 5 )]
 margin_top = 202.0
 margin_right = 594.0
 margin_bottom = 262.0
+script = null
 
 [node name="Exit" parent="Menu/CenterRow/Buttons" instance=ExtResource( 6 )]
 margin_top = 282.0
@@ -77,12 +80,15 @@ margin_bottom = 385.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Characters" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
-margin_left = 137.0
-margin_top = 32.0
-margin_right = 457.0
-margin_bottom = 352.0
+[node name="FrontImage" type="TextureRect" parent="Menu/CenterRow/CenterContainer"]
+margin_left = 71.0
+margin_top = 24.0
+margin_right = 523.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 452, 336 )
 texture = ExtResource( 7 )
+expand = true
+stretch_mode = 6
 
 [node name="CenterRow2" type="HBoxContainer" parent="Menu"]
 margin_top = 606.0
@@ -114,5 +120,7 @@ expand = true
 stream = ExtResource( 11 )
 autoplay = true
 [connection signal="pressed" from="Menu/CenterRow/Buttons/NewGameButton" to="." method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="Menu/CenterRow/Buttons/OptionsButton" to="." method="_on_OptionsButton_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]

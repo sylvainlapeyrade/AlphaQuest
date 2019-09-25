@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rogueliketiles.png-933460701527270e2fb844117fd9e46b.stex"
+path="res://.import/rogueliketiles.png-73e525f32453213c54e89d9fbcdf4261.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/level1/map/rogueliketiles.png"
-dest_files=[ "res://.import/rogueliketiles.png-933460701527270e2fb844117fd9e46b.stex" ]
+source_file="res://game/map/rogueliketiles.png"
+dest_files=[ "res://.import/rogueliketiles.png-73e525f32453213c54e89d9fbcdf4261.stex" ]
 
 [params]
 

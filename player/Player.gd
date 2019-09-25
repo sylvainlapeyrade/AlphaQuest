@@ -8,6 +8,9 @@ var last_direction = "down"
 func _ready():
 	screen_size = get_viewport_rect().size
 
+func _physics_process(delta):
+	move_and_collide(Vector2(0, 0))
+
 func _process(delta):
 	playerMouvement(delta);
 
