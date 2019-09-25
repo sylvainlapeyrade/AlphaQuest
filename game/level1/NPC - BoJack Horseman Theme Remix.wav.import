@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/NPC - BoJack Horseman Theme Remix.wav-0ec590a8ffc400f9eab6c1c859591656.sample"
+
+[deps]
+
+source_file="res://game/level1/NPC - BoJack Horseman Theme Remix.wav"
+dest_files=[ "res://.import/NPC - BoJack Horseman Theme Remix.wav-0ec590a8ffc400f9eab6c1c859591656.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

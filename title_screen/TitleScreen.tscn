@@ -52,6 +52,7 @@ alignment = 1
 margin_top = 42.0
 margin_right = 594.0
 margin_bottom = 102.0
+script = null
 
 [node name="ContinueButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
 margin_top = 122.0
@@ -112,5 +113,6 @@ expand = true
 [node name="DoubleTheBits" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 autoplay = true
+[connection signal="pressed" from="Menu/CenterRow/Buttons/NewGameButton" to="." method="_on_NewGameButton_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="fade_finished" from="FadeIn" to="." method="_on_FadeIn_fade_finished"]
