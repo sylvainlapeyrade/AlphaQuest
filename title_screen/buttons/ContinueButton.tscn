@@ -6,4 +6,7 @@
 scene_to_load = "res://game/Continue.tscn"
 
 [node name="Label" parent="." index="0"]
+rect_scale = Vector2( 1.25, 1.25 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Continue"
+valign = 1

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fonts/montserrat_eb_24.tres" type="DynamicFont" id=1]
+[ext_resource path="res://objects/coin/coin.png" type="Texture" id=2]
+
+[node name="GUI" type="Node2D"]
+
+[node name="CoinCounter" type="Label" parent="."]
+margin_left = 22.0
+margin_top = 35.0
+margin_right = 78.0
+margin_bottom = 90.0
+custom_fonts/font = ExtResource( 1 )
+text = "0
+"
+align = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 82.94
+margin_top = 31.0516
+margin_right = 114.94
+margin_bottom = 63.0516
+texture = ExtResource( 2 )
+expand = true
