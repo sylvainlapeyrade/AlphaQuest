@@ -14,24 +14,19 @@ func _physics_process(delta):
 func _process(delta):
 	playerMouvement(delta);
 
-func playerAttack():
-	if Input.is_action_pressed("ui_select"):
-		$AnimatedSprite.animation = "left"
-		$AnimatedSprite.animation = "attack_left"
-		$AnimatedSprite.play()
-
 func playerMouvement(delta):
 	var velocity = Vector2.ZERO  # The player's movement vector.
 	if Input.is_action_pressed("ui_accept"):
-		if last_direction == "right":
-			$AnimatedSprite.play("attack_right")
-		elif last_direction == "left":
-			$AnimatedSprite.play("attack_left")
-		elif last_direction == "up":
-			$AnimatedSprite.play("attack_up")
-		elif last_direction == "down":
-			$AnimatedSprite.play("attack_down")
-		return
+		if get_owner().sword_possessed == 1:
+			if last_direction == "right":
+				$AnimatedSprite.play("attack_right")
+			elif last_direction == "left":
+				$AnimatedSprite.play("attack_left")
+			elif last_direction == "up":
+				$AnimatedSprite.play("attack_up")
+			elif last_direction == "down":
+				$AnimatedSprite.play("attack_down")
+			return
 		
 	# Test prevent diagonals movements	
 	if Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_up"):

@@ -3,9 +3,6 @@
 [ext_resource path="res://title_screen/buttons/MenuButton.gd" type="Script" id=1]
 [ext_resource path="res://fonts/montserrat_eb_48.tres" type="DynamicFont" id=2]
 
-
-
-
 [node name="MenuButton" type="Button"]
 margin_right = 200.0
 margin_bottom = 60.0

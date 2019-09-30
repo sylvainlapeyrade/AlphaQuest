@@ -1,0 +1,223 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://title_screen/Commands.gd" type="Script" id=1]
+[ext_resource path="res://title_screen/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/montserrat_eb_48.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/montserrat_eb_24.tres" type="DynamicFont" id=4]
+[ext_resource path="res://player/knight/knight iso char_run right_0.png" type="Texture" id=5]
+[ext_resource path="res://player/knight/knight iso char_run right_1.png" type="Texture" id=6]
+[ext_resource path="res://player/knight/knight iso char_run right_2.png" type="Texture" id=7]
+[ext_resource path="res://player/knight/knight iso char_run right_3.png" type="Texture" id=8]
+[ext_resource path="res://player/knight/knight iso char_run right_4.png" type="Texture" id=9]
+[ext_resource path="res://player/knight/knight iso char_run right_5.png" type="Texture" id=10]
+[ext_resource path="res://player/knight/knight iso char_run left_1.png" type="Texture" id=11]
+[ext_resource path="res://player/knight/knight iso char_run left_2.png" type="Texture" id=12]
+[ext_resource path="res://player/knight/knight iso char_run left_3.png" type="Texture" id=13]
+[ext_resource path="res://player/knight/knight iso char_run left_4.png" type="Texture" id=14]
+[ext_resource path="res://player/knight/knight iso char_run left_5.png" type="Texture" id=15]
+[ext_resource path="res://player/knight/knight iso char_run down_0.png" type="Texture" id=16]
+[ext_resource path="res://player/knight/knight iso char_run down_1.png" type="Texture" id=17]
+[ext_resource path="res://player/knight/knight iso char_run down_2.png" type="Texture" id=18]
+[ext_resource path="res://player/knight/knight iso char_run down_3.png" type="Texture" id=19]
+[ext_resource path="res://player/knight/knight iso char_run down_4.png" type="Texture" id=20]
+[ext_resource path="res://player/knight/knight iso char_run up_0.png" type="Texture" id=21]
+[ext_resource path="res://player/knight/knight iso char_run up_1.png" type="Texture" id=22]
+[ext_resource path="res://player/knight/knight iso char_run up_2.png" type="Texture" id=23]
+[ext_resource path="res://player/knight/knight iso char_run up_3.png" type="Texture" id=24]
+[ext_resource path="res://player/knight/knight iso char_run up_4.png" type="Texture" id=25]
+[ext_resource path="res://player/knight/knight iso char_slice up_0.png" type="Texture" id=26]
+[ext_resource path="res://player/knight/knight iso char_slice up_1.png" type="Texture" id=27]
+[ext_resource path="res://player/knight/knight iso char_slice up_2.png" type="Texture" id=28]
+[ext_resource path="res://player/knight/knight iso char_slice left_0.png" type="Texture" id=29]
+[ext_resource path="res://player/knight/knight iso char_slice left_1.png" type="Texture" id=30]
+[ext_resource path="res://player/knight/knight iso char_slice left_2.png" type="Texture" id=31]
+[ext_resource path="res://player/knight/knight iso char_slice right_0.png" type="Texture" id=32]
+[ext_resource path="res://player/knight/knight iso char_slice right_1.png" type="Texture" id=33]
+[ext_resource path="res://player/knight/knight iso char_slice right_2.png" type="Texture" id=34]
+[ext_resource path="res://player/knight/knight iso char_slice down_0.png" type="Texture" id=35]
+[ext_resource path="res://player/knight/knight iso char_slice down_1.png" type="Texture" id=36]
+[ext_resource path="res://player/knight/knight iso char_slice down_2.png" type="Texture" id=37]
+[ext_resource path="res://title_screen/double_the_bits.wav" type="AudioStream" id=38]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "Left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "Down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "Up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "AttackUp",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "AttackLeft",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "AttackRight",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "AttackDown",
+"speed": 5.0
+} ]
+
+[sub_resource type="Theme" id=2]
+
+[node name="Commands" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+position = Vector2( 640.453, 361.248 )
+frame = 13
+
+[node name="Labels" type="VBoxContainer" parent="Background"]
+margin_left = -220.0
+margin_top = -199.836
+margin_right = 58.0
+margin_bottom = 328.164
+rect_scale = Vector2( 0.75, 0.75 )
+custom_constants/separation = 150
+alignment = 1
+
+[node name="MovTitle" type="Label" parent="Background/Labels"]
+margin_top = 46.0
+margin_right = 278.0
+margin_bottom = 91.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.596078, 0, 1 )
+text = "Movements:"
+
+[node name="Movements" type="Label" parent="Background/Labels/MovTitle"]
+margin_top = 49.0
+margin_right = 278.0
+margin_bottom = 104.0
+custom_fonts/font = ExtResource( 4 )
+text = "W A S D
+ARROWS"
+
+[node name="AttTitle" type="Label" parent="Background/Labels"]
+margin_top = 241.0
+margin_right = 278.0
+margin_bottom = 286.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.596078, 0, 1 )
+text = "Attacks:"
+
+[node name="Attack" type="Label" parent="Background/Labels/AttTitle"]
+margin_top = 49.0
+margin_right = 278.0
+margin_bottom = 104.0
+custom_fonts/font = ExtResource( 4 )
+text = "SPACE
+ENTER"
+
+[node name="GoBack" type="Label" parent="Background/Labels"]
+margin_top = 436.0
+margin_right = 278.0
+margin_bottom = 481.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 1, 0.596078, 0, 1 )
+text = "Go bach:"
+
+[node name="Escape" type="Label" parent="Background/Labels/GoBack"]
+margin_top = 49.0
+margin_right = 278.0
+margin_bottom = 75.0
+custom_fonts/font = ExtResource( 4 )
+text = "Escape"
+
+[node name="Animations" type="Node2D" parent="Background"]
+position = Vector2( -239.624, -225 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Down" type="AnimatedSprite" parent="Background/Animations"]
+position = Vector2( 346.447, 189.403 )
+frames = SubResource( 1 )
+animation = "Down"
+frame = 2
+playing = true
+
+[node name="AttackDown" type="AnimatedSprite" parent="Background/Animations"]
+position = Vector2( 343.968, 360.325 )
+frames = SubResource( 1 )
+animation = "AttackDown"
+frame = 2
+playing = true
+
+[node name="AttackUp" type="AnimatedSprite" parent="Background/Animations"]
+position = Vector2( 552.56, 369.261 )
+frames = SubResource( 1 )
+animation = "AttackUp"
+frame = 2
+playing = true
+
+[node name="Up" type="AnimatedSprite" parent="Background/Animations"]
+position = Vector2( 543.803, 191.941 )
+frames = SubResource( 1 )
+animation = "Up"
+playing = true
+
+[node name="AttackLeft" type="AnimatedSprite" parent="Background/Animations"]
+position = Vector2( 459.373, 360.634 )
+frames = SubResource( 1 )
+animation = "AttackLeft"
+playing = true
+
+[node name="Left" type="AnimatedSprite" parent="Background/Animations"]
+position = Vector2( 254.355, 185.446 )
+frames = SubResource( 1 )
+animation = "Left"
+frame = 4
+playing = true
+
+[node name="AttackRight" type="AnimatedSprite" parent="Background/Animations"]
+position = Vector2( 235.061, 344.741 )
+frames = SubResource( 1 )
+animation = "AttackRight"
+frame = 2
+playing = true
+
+[node name="Right" type="AnimatedSprite" parent="Background/Animations"]
+position = Vector2( 442.453, 187.582 )
+frames = SubResource( 1 )
+animation = "Right"
+frame = 1
+playing = true
+
+[node name="Button" type="Button" parent="Background"]
+margin_left = 63.0
+margin_top = 159.0
+margin_right = 200.0
+margin_bottom = 210.0
+theme = SubResource( 2 )
+custom_fonts/font = ExtResource( 4 )
+text = "Go Back"
+
+[node name="DoubleTheBits" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 38 )
+autoplay = true
+[connection signal="pressed" from="Background/Button" to="." method="_on_Button_pressed"]
