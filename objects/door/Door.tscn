@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://objects/door/Door.gd" type="Script" id=1]
-[ext_resource path="res://objects/door/doorclosed.png" type="Texture" id=2]
-[ext_resource path="res://objects/door/dooropen.png" type="Texture" id=3]
+[ext_resource path="res://game/map/tiles/sprite_02.png" type="Texture" id=2]
+[ext_resource path="res://game/map/tiles/sprite_03.png" type="Texture" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -13,7 +13,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 40, 40 )
+extents = Vector2( 12.9991, 14.1999 )
 
 [node name="Door" type="Area2D"]
 scale = Vector2( 1, 0.868487 )

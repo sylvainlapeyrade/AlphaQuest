@@ -50,7 +50,7 @@
 [ext_resource path="res://title_screen/fade_in/FadeIn.tscn" type="PackedScene" id=48]
 [ext_resource path="res://title_screen/double_the_bits.wav" type="AudioStream" id=49]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ],
 "loop": true,
@@ -58,7 +58,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="Theme" id=3]
+[sub_resource type="Theme" id=2]
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -69,7 +69,7 @@ margin_bottom = 1.0
 script = ExtResource( 1 )
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
-frame = 4
+frame = 35
 
 [node name="Menu" type="VBoxContainer" parent="."]
 margin_left = 68.0
@@ -86,7 +86,6 @@ texture = ExtResource( 3 )
 stretch_mode = 4
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
-editor/display_folded = true
 margin_top = 173.0
 margin_right = 1169.0
 margin_bottom = 558.0
@@ -123,7 +122,6 @@ margin_right = 582.0
 margin_bottom = 327.0
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
-editor/display_folded = true
 margin_left = 586.0
 margin_right = 1169.0
 margin_bottom = 385.0
@@ -131,14 +129,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Menu/CenterRow/CenterContainer"]
-position = Vector2( 380.308, 81.0633 )
+position = Vector2( 280.097, 151.211 )
 scale = Vector2( 3.46126, 2.4745 )
-frames = SubResource( 2 )
-frame = 10
+frames = SubResource( 1 )
+frame = 37
 playing = true
 
 [node name="CenterRow2" type="HBoxContainer" parent="Menu"]
-editor/display_folded = true
 margin_top = 578.0
 margin_right = 1169.0
 margin_bottom = 658.0
@@ -150,7 +147,7 @@ margin_bottom = 55.0
 size_flags_vertical = 0
 size_flags_stretch_ratio = 1.01
 custom_fonts/font = ExtResource( 46 )
-text = "Version 0.1
+text = "Version 0.5
 Sylvain Lapeyrade "
 valign = 2
 
@@ -159,7 +156,7 @@ margin_left = 969.0
 margin_right = 1169.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 200, 80 )
-theme = SubResource( 3 )
+theme = SubResource( 2 )
 texture = ExtResource( 47 )
 expand = true
 

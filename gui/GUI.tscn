@@ -1,24 +1,48 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://fonts/montserrat_eb_24.tres" type="DynamicFont" id=1]
 [ext_resource path="res://objects/coin/coin.png" type="Texture" id=2]
+[ext_resource path="res://objects/key/key.png" type="Texture" id=3]
 
 [node name="GUI" type="Node2D"]
 
-[node name="CoinCounter" type="Label" parent="."]
-margin_left = 22.0
-margin_top = 35.0
-margin_right = 78.0
-margin_bottom = 90.0
+[node name="Coin" type="Node2D" parent="."]
+
+[node name="CoinCounter" type="Label" parent="Coin"]
+margin_left = 53.0405
+margin_top = 4.4228
+margin_right = 109.04
+margin_bottom = 59.4228
 custom_fonts/font = ExtResource( 1 )
 text = "0
 "
 align = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 82.94
-margin_top = 31.0516
-margin_right = 114.94
-margin_bottom = 63.0516
+[node name="TextureRect" type="TextureRect" parent="Coin"]
+margin_left = 113.98
+margin_top = 0.474398
+margin_right = 145.98
+margin_bottom = 32.4744
 texture = ExtResource( 2 )
+expand = true
+
+[node name="Key" type="Node2D" parent="."]
+position = Vector2( -57.4481, -1.38988 )
+
+[node name="KeyCounter" type="Label" parent="Key"]
+margin_left = 22.0
+margin_top = 5.81266
+margin_right = 78.0
+margin_bottom = 60.8127
+custom_fonts/font = ExtResource( 1 )
+text = "0
+"
+align = 2
+
+[node name="TextureRect" type="TextureRect" parent="Key"]
+margin_left = 82.94
+margin_top = 1.86426
+margin_right = 114.94
+margin_bottom = 33.8643
+texture = ExtResource( 3 )
 expand = true

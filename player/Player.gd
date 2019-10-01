@@ -1,9 +1,11 @@
 extends KinematicBody2D
 
-export var speed = 50  # How fast the player will move (pixels/sec).
+export var speed = 250  # How fast the player will move (pixels/sec). def = 50
 var screen_size  # Size of the game window.
 var last_direction = "down"
-
+var sword_possessed = 0
+var key_collected = 0
+var coin_collected = 0
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -17,7 +19,7 @@ func _process(delta):
 func playerMouvement(delta):
 	var velocity = Vector2.ZERO  # The player's movement vector.
 	if Input.is_action_pressed("ui_accept"):
-		if get_owner().sword_possessed == 1:
+		if sword_possessed == 1:
 			if last_direction == "right":
 				$AnimatedSprite.play("attack_right")
 			elif last_direction == "left":
