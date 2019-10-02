@@ -1,11 +1,13 @@
 extends KinematicBody2D
 
-export var speed = 250  # How fast the player will move (pixels/sec). def = 50
+export var speed = 50  # How fast the player will move (pixels/sec). def = 50
 var screen_size  # Size of the game window.
 var last_direction = "down"
 var sword_possessed = 0
 var key_collected = 0
 var coin_collected = 0
+var parent = null
+var can_interact = false
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -19,16 +21,20 @@ func _process(delta):
 func playerMouvement(delta):
 	var velocity = Vector2.ZERO  # The player's movement vector.
 	if Input.is_action_pressed("ui_accept"):
-		if sword_possessed == 1:
-			if last_direction == "right":
-				$AnimatedSprite.play("attack_right")
-			elif last_direction == "left":
-				$AnimatedSprite.play("attack_left")
-			elif last_direction == "up":
-				$AnimatedSprite.play("attack_up")
-			elif last_direction == "down":
-				$AnimatedSprite.play("attack_down")
-			return
+		if can_interact == false:
+			if sword_possessed == 1:
+				if last_direction == "right":
+					$AnimatedSprite.play("attack_right")
+				elif last_direction == "left":
+					$AnimatedSprite.play("attack_left")
+				elif last_direction == "up":
+					$AnimatedSprite.play("attack_up")
+				elif last_direction == "down":
+					$AnimatedSprite.play("attack_down")
+				return
+		else:
+			print(parent)
+			get_owner().get_node("TileMap/NPCs/"+parent).dialog()
 		
 	# Test prevent diagonals movements	
 	if Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_up"):
@@ -66,3 +72,12 @@ func updatePosition(velocity, delta):
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
 	
+
+func _on_Area2D_area_entered(area):
+	parent = area.get_parent().get_name()
+	if parent == "NPC1" or parent == "NPC2" :
+		can_interact = true
+
+func _on_Area2D_area_exited(area):
+	parent = null
+	can_interact = false

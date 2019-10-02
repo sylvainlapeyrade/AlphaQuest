@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://game/npc/NPC.gd" type="Script" id=1]
+[ext_resource path="res://game/npc/sprite_36.png" type="Texture" id=2]
+[ext_resource path="res://game/npc/sprite_42.png" type="Texture" id=3]
+[ext_resource path="res://game/npc/sprite_06.png" type="Texture" id=4]
+[ext_resource path="res://game/npc/sprite_45.png" type="Texture" id=5]
+[ext_resource path="res://game/npc/sprite_09.png" type="Texture" id=6]
+[ext_resource path="res://game/npc/sprite_39.png" type="Texture" id=7]
+[ext_resource path="res://game/npc/sprite_00.png" type="Texture" id=8]
+[ext_resource path="res://game/npc/sprite_03.png" type="Texture" id=9]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 19.952
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.97187
+height = 2.87846
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "NPC5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "NPC7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "NPC3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "NPC8",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "NPC4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "NPC6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "NPC1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "NPC2",
+"speed": 5.0
+} ]
+
+[node name="NPC" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 57.9126, 33.6475 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 58.2361, 35.9123 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 58.0336, 29.4037 )
+frames = SubResource( 3 )
+animation = "NPC1"

@@ -3,19 +3,23 @@ extends Node2D
 var scene_path_to_load
 
 func _ready():
-	print_screen_typed("Hello adventurer, are you ready for your quest?")
+	print_screen_typed("Greetings adventurer! Are you brave enough to explore the dungeon and " +\
+	"start a great quest?", 5)
 
 func print_screen(message, displaytime):
 	get_node("CanvasLayer/Message").set_bbcode("[center]"+message+"[/center]")
 	get_node("CanvasLayer/Message/Timer").start(displaytime)
 
-func print_screen_typed(message):
+func print_screen_typed(message, displaytime):
 	var present_message = ""
+	var timer = get_node("CanvasLayer/Message/Timer")
 	for letter in message:
 		present_message += str(letter)
-		get_node("CanvasLayer/Message/Timer2").start(0.1)
+		timer.start(0.1)
+		yield(timer, "timeout")
 		get_node("CanvasLayer/Message").set_bbcode("[center]"+present_message+"[/center]")
-		yield(get_node("CanvasLayer/Message/Timer2"), "timeout")
+	timer.start(displaytime)
+
 
 func _process(delta):
 	if Input.is_action_pressed("ui_cancel"):
@@ -23,6 +27,3 @@ func _process(delta):
 
 func _on_Timer_timeout():
 	get_node("CanvasLayer/Message").set_text("")
-
-func _on_Timer2_timeout():
-	get_node("CanvasLayer/Message/Timer").start(0.1)
