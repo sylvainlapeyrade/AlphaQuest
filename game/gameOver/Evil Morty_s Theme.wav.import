@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Evil Morty_s Theme.wav-edcfd73c3f7a31a7e3734fcf7cc5a017.sample"
+
+[deps]
+
+source_file="res://game/gameOver/Evil Morty_s Theme.wav"
+dest_files=[ "res://.import/Evil Morty_s Theme.wav-edcfd73c3f7a31a7e3734fcf7cc5a017.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://game/monster/Monster.gd" type="Script" id=1]
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_28.png" type="Texture" id=2]
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_27.png" type="Texture" id=3]
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_26.png" type="Texture" id=4]
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_47.png" type="Texture" id=5]
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_45.png" type="Texture" id=6]
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_46.png" type="Texture" id=7]
+
+
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "bat_attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "bat",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "ghost_attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "ghost",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 7.81379
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 18.9175
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 62.8904
+
+[node name="Monster" type="KinematicBody2D"]
+position = Vector2( 34.9417, 23.618 )
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.0581741, 0.430466 )
+frames = SubResource( 1 )
+animation = "bat"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.0943451, -0.167034 )
+shape = SubResource( 2 )
+
+[node name="MeleeRange" type="Area2D" parent="."]
+position = Vector2( 0.323524, 0.32354 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeRange"]
+position = Vector2( -0.840126, -0.193695 )
+shape = SubResource( 3 )
+
+[node name="AgressionRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AgressionRange"]
+shape = SubResource( 4 )
+[connection signal="body_entered" from="MeleeRange" to="." method="_on_MeleeRange_body_entered"]
+[connection signal="body_exited" from="MeleeRange" to="." method="_on_MeleeRange_body_exited"]
+[connection signal="body_entered" from="AgressionRange" to="." method="_on_AgressionRange_body_entered"]
+[connection signal="body_exited" from="AgressionRange" to="." method="_on_AgressionRange_body_exited"]

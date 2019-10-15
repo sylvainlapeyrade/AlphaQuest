@@ -5,6 +5,7 @@
 [ext_resource path="res://objects/key/key.png" type="Texture" id=3]
 
 [node name="GUI" type="Node2D"]
+position = Vector2( 1093.45, 15.3649 )
 
 [node name="Coin" type="Node2D" parent="."]
 
@@ -46,3 +47,11 @@ margin_right = 114.94
 margin_bottom = 33.8643
 texture = ExtResource( 3 )
 expand = true
+
+[node name="HPCounter" type="Label" parent="."]
+margin_left = -1067.2
+margin_top = 3.11972
+margin_right = -982.2
+margin_bottom = 29.1197
+custom_fonts/font = ExtResource( 1 )
+text = "Hp: 100"

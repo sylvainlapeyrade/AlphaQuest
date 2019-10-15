@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://game/npc/NPC.gd" type="Script" id=1]
-[ext_resource path="res://game/npc/sprite_36.png" type="Texture" id=2]
-[ext_resource path="res://game/npc/sprite_42.png" type="Texture" id=3]
-[ext_resource path="res://game/npc/sprite_06.png" type="Texture" id=4]
-[ext_resource path="res://game/npc/sprite_45.png" type="Texture" id=5]
-[ext_resource path="res://game/npc/sprite_09.png" type="Texture" id=6]
-[ext_resource path="res://game/npc/sprite_39.png" type="Texture" id=7]
-[ext_resource path="res://game/npc/sprite_00.png" type="Texture" id=8]
-[ext_resource path="res://game/npc/sprite_03.png" type="Texture" id=9]
+[ext_resource path="res://game/npc/sprites/sprite_09.png" type="Texture" id=2]
+[ext_resource path="res://game/npc/sprites/sprite_45.png" type="Texture" id=3]
+[ext_resource path="res://game/npc/sprites/sprite_36.png" type="Texture" id=4]
+[ext_resource path="res://game/npc/sprites/sprite_06.png" type="Texture" id=5]
+[ext_resource path="res://game/npc/sprites/sprite_42.png" type="Texture" id=6]
+[ext_resource path="res://game/npc/sprites/sprite_03.png" type="Texture" id=7]
+[ext_resource path="res://game/npc/sprites/sprite_39.png" type="Texture" id=8]
+[ext_resource path="res://game/npc/sprites/sprite_00.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 19.952
@@ -21,42 +21,42 @@ height = 2.87846
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "NPC5",
+"name": "NPC4",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "NPC7",
+"name": "NPC8",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "NPC3",
+"name": "NPC5",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "NPC8",
+"name": "NPC3",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "NPC4",
+"name": "NPC7",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "NPC6",
+"name": "NPC2",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "NPC1",
+"name": "NPC6",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "NPC2",
+"name": "NPC1",
 "speed": 5.0
 } ]
 

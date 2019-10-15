@@ -5,13 +5,13 @@ var scene_path_to_load
 func _ready():
 	$Menu/CenterRow/Buttons/NewGameButton.grab_focus()
 
-func _physics_process(delta):
+func _process(delta):
 	for button in $Menu/CenterRow/Buttons.get_children():
 		if button.is_hovered() == true:
 			button.grab_focus()
-	if Input.is_action_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
-
+		
 func _on_FadeIn_fade_finished():
 	$FadeIn.hide()
 	get_tree().change_scene(scene_path_to_load)
