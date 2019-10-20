@@ -18,6 +18,9 @@ func _on_TryAgainButton_pressed():
 		get_tree().change_scene("res://game/level1/Level1.tscn")
 	if get_owner().get_name() == "Level2":
 		get_tree().change_scene("res://game/level2/Level2.tscn")
+	if get_owner().get_name() == "Level3":
+		get_tree().change_scene("res://game/level3/Level3.tscn")
 
 func _on_GameOver_visibility_changed():
 	$Buttons/TryAgainButton.grab_focus()
+	get_node("AudioStreamPlayer").play()

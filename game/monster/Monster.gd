@@ -1,6 +1,6 @@
 extends KinematicBody2D
 onready var target = $"../../Player"
-var speed = 75  # How fast the Monster will move (pixels/sec). def = 30
+var monster_speed = 75  # How fast the Monster will move (pixels/sec). def = 30
 var ai_think_time = 0.7
 var ai_think_time_timer = null
 var monster_health = 50
@@ -14,6 +14,12 @@ func _ready():
 		get_node("AnimatedSprite").play("bat")
 	elif get_owner().get_name() == "Level2":
 		get_node("AnimatedSprite").play("ghost")
+	elif get_owner().get_name() == "Level3":
+		get_node("AnimatedSprite").play("boss")
+		monster_health += 1950
+		monster_speed = 50
+		var ai_think_time = 2
+		
 	setup_ai_think_time_timer()
 	start_position = self.position
 	setup_timer_blink()
@@ -22,6 +28,8 @@ func _process(delta):
 	if monster_health <= 0:
 		target.defeat_monster(10)
 		queue_free()
+		if get_owner().get_name() == "Level3":
+			get_owner().game_win()
 	if player_attack_range && ai_think_time_timer.time_left == 0 && target.is_player_alive:
 		decide_to_attack()
 	elif player_move_range && target.is_player_alive:
@@ -34,7 +42,7 @@ func ai_get_direction(desired_positon):
 
 func ai_move(desired_positon):
 	var direction = ai_get_direction(desired_positon)
-	var motion = direction.normalized() * speed
+	var motion = direction.normalized() * monster_speed
 	move_and_slide(motion)
 	
 func setup_ai_think_time_timer():
@@ -66,6 +74,8 @@ func attack():
 		target.take_damage(5)
 	elif get_owner().get_name() == "Level2": 
 		target.take_damage(10)
+	elif get_owner().get_name() == "Level3": 
+		target.take_damage(20)
 
 func decide_to_attack():
 	ai_think_time_timer.start()
@@ -81,6 +91,8 @@ func _on_MeleeRange_body_entered(body):
 			get_node("AnimatedSprite").play("bat_attack")
 		elif get_owner().get_name() == "Level2":
 			get_node("AnimatedSprite").play("ghost_attack")
+		elif get_owner().get_name() == "Level3":
+			get_node("AnimatedSprite").play("boss_attack")
 
 func _on_MeleeRange_body_exited(body):
 	if body.get_name() == "Player" && get_owner() != null:
@@ -89,6 +101,8 @@ func _on_MeleeRange_body_exited(body):
 			get_node("AnimatedSprite").play("bat")
 		elif get_owner().get_name() == "Level2":
 			get_node("AnimatedSprite").play("ghost")
+		elif get_owner().get_name() == "Level3":
+			get_node("AnimatedSprite").play("boss")
 
 func _on_AgressionRange_body_entered(body):
 	if body.get_name() == "Player":

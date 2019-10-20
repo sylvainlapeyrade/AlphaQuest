@@ -14,6 +14,7 @@ var in_monster_range = false
 var blink_timer = null
 onready var target = null
 var player_damage = 10
+var game_won = false
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -21,6 +22,9 @@ func _ready():
 	setup_timer_blink()
 	if get_owner().get_name()=="Level2":
 		sword_possessed = true
+	elif get_owner().get_name()=="Level3":
+		sword_possessed = true
+		player_damage = 30
 	
 func _physics_process(delta):
 	move_and_collide(Vector2(0, 0))
@@ -31,7 +35,7 @@ func _physics_process(delta):
 		get_owner().game_over()
 
 func _process(delta):
-	if Input:
+	if Input && !game_won:
 		interpret_input(delta)
 		
 func interpret_input(delta):

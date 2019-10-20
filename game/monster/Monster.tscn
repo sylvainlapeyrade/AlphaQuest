@@ -1,43 +1,54 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://game/monster/Monster.gd" type="Script" id=1]
-[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_28.png" type="Texture" id=2]
-[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_27.png" type="Texture" id=3]
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_46.png" type="Texture" id=2]
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_47.png" type="Texture" id=3]
 [ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_26.png" type="Texture" id=4]
-[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_47.png" type="Texture" id=5]
-[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_45.png" type="Texture" id=6]
-[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_46.png" type="Texture" id=7]
-
-
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_27.png" type="Texture" id=5]
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_58.png" type="Texture" id=6]
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_57.png" type="Texture" id=7]
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_45.png" type="Texture" id=8]
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_28.png" type="Texture" id=9]
+[ext_resource path="res://game/monster/roguelikecreaturessprite/sprite_59.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
-"name": "bat_attack",
+"name": "ghost_attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "bat",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "ghost_attack",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "boss_attack",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "ghost",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "bat_attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "boss",
+"speed": 1.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 7.81379
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 18.9175
+radius = 10.2699
 
 [sub_resource type="CircleShape2D" id=4]
 radius = 62.8904
