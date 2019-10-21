@@ -19,12 +19,14 @@ func _on_Chest_body_entered(body):
 			if body.key_collected > 0:
 				$AnimatedSprite.frame = 1
 				chest_opened = true
+				body.key_collected -=  1
+				get_owner().get_node("CanvasLayer/GUI/Key/KeyCounter").set_text(str(body.key_collected))
 				if get_owner().get_name() == "Level1": 
 					get_owner().get_node("CanvasLayer/GUI").print_screen("You have found food, now your health is full again!", 10)
 					body.player_health = 100
 					body.updatePlayerHealth()
 				elif get_owner().get_name() == "Level2":
-					get_owner().get_node("CanvasLayer/GUI").print_screen("This chest contained the blessing of the elders, you damages has been tripled!. ", 10)
+					get_owner().get_node("CanvasLayer/GUI").print_screen("This chest contained the blessing of the elders, your damages have been tripled!. ", 10)
 					body.player_damage = 30
 			else:
 				get_owner().get_node("CanvasLayer/GUI").print_screen("You need a key to open this chest!", 5)

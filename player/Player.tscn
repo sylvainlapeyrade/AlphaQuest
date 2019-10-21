@@ -1,18 +1,18 @@
 [gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
-[ext_resource path="res://player/knight/knight iso char_run right_0.png" type="Texture" id=2]
-[ext_resource path="res://player/knight/knight iso char_run right_1.png" type="Texture" id=3]
-[ext_resource path="res://player/knight/knight iso char_run right_2.png" type="Texture" id=4]
-[ext_resource path="res://player/knight/knight iso char_run right_3.png" type="Texture" id=5]
-[ext_resource path="res://player/knight/knight iso char_run right_4.png" type="Texture" id=6]
-[ext_resource path="res://player/knight/knight iso char_run right_5.png" type="Texture" id=7]
-[ext_resource path="res://player/knight/knight iso char_run left_0.png" type="Texture" id=8]
-[ext_resource path="res://player/knight/knight iso char_run left_1.png" type="Texture" id=9]
-[ext_resource path="res://player/knight/knight iso char_run left_2.png" type="Texture" id=10]
-[ext_resource path="res://player/knight/knight iso char_run left_3.png" type="Texture" id=11]
-[ext_resource path="res://player/knight/knight iso char_run left_4.png" type="Texture" id=12]
-[ext_resource path="res://player/knight/knight iso char_run left_5.png" type="Texture" id=13]
+[ext_resource path="res://player/knight/knight iso char_run left_0.png" type="Texture" id=2]
+[ext_resource path="res://player/knight/knight iso char_run left_1.png" type="Texture" id=3]
+[ext_resource path="res://player/knight/knight iso char_run left_2.png" type="Texture" id=4]
+[ext_resource path="res://player/knight/knight iso char_run left_3.png" type="Texture" id=5]
+[ext_resource path="res://player/knight/knight iso char_run left_4.png" type="Texture" id=6]
+[ext_resource path="res://player/knight/knight iso char_run left_5.png" type="Texture" id=7]
+[ext_resource path="res://player/knight/knight iso char_run right_0.png" type="Texture" id=8]
+[ext_resource path="res://player/knight/knight iso char_run right_1.png" type="Texture" id=9]
+[ext_resource path="res://player/knight/knight iso char_run right_2.png" type="Texture" id=10]
+[ext_resource path="res://player/knight/knight iso char_run right_3.png" type="Texture" id=11]
+[ext_resource path="res://player/knight/knight iso char_run right_4.png" type="Texture" id=12]
+[ext_resource path="res://player/knight/knight iso char_run right_5.png" type="Texture" id=13]
 [ext_resource path="res://player/knight/knight iso char_run up_0.png" type="Texture" id=14]
 [ext_resource path="res://player/knight/knight iso char_run up_1.png" type="Texture" id=15]
 [ext_resource path="res://player/knight/knight iso char_run up_2.png" type="Texture" id=16]
@@ -24,12 +24,12 @@
 [ext_resource path="res://player/knight/knight iso char_slice up_1.png" type="Texture" id=22]
 [ext_resource path="res://player/knight/knight iso char_slice left_1.png" type="Texture" id=23]
 [ext_resource path="res://player/knight/knight iso char_slice left_2.png" type="Texture" id=24]
-[ext_resource path="res://player/knight/knight iso char_slice right_1.png" type="Texture" id=25]
-[ext_resource path="res://player/knight/knight iso char_slice right_2.png" type="Texture" id=26]
-[ext_resource path="res://player/knight/knight iso char_idle_0.png" type="Texture" id=27]
-[ext_resource path="res://player/knight/knight iso char_idle_1.png" type="Texture" id=28]
-[ext_resource path="res://player/knight/knight iso char_idle_2.png" type="Texture" id=29]
-[ext_resource path="res://player/knight/knight iso char_idle_3.png" type="Texture" id=30]
+[ext_resource path="res://player/knight/knight iso char_idle_0.png" type="Texture" id=25]
+[ext_resource path="res://player/knight/knight iso char_idle_1.png" type="Texture" id=26]
+[ext_resource path="res://player/knight/knight iso char_idle_2.png" type="Texture" id=27]
+[ext_resource path="res://player/knight/knight iso char_idle_3.png" type="Texture" id=28]
+[ext_resource path="res://player/knight/knight iso char_slice right_1.png" type="Texture" id=29]
+[ext_resource path="res://player/knight/knight iso char_slice right_2.png" type="Texture" id=30]
 [ext_resource path="res://player/knight/knight iso char_run down_0.png" type="Texture" id=31]
 [ext_resource path="res://player/knight/knight iso char_run down_1.png" type="Texture" id=32]
 [ext_resource path="res://player/knight/knight iso char_run down_2.png" type="Texture" id=33]
@@ -41,12 +41,12 @@
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "right",
+"name": "left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
-"name": "left",
+"name": "right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
@@ -64,34 +64,34 @@ animations = [ {
 "name": "attack_up",
 "speed": 0.1
 }, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "idle_left",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": false,
 "name": "attack_right",
 "speed": 0.1
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 26 ) ],
-"loop": false,
-"name": "attack_left",
-"speed": 0.1
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "idle_right",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ) ],
 "loop": true,
 "name": "idle_up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"frames": [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
 "loop": true,
 "name": "idle_down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "idle_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ) ],
+"loop": false,
+"name": "attack_left",
+"speed": 0.1
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "idle_right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ],
@@ -101,11 +101,11 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 4.47689
-height = 0.0319576
+radius = 3.67616
+height = 5.7504
 
 [sub_resource type="CapsuleShape2D" id=3]
-radius = 11.0688
+radius = 6.0563
 height = 16.1502
 
 [node name="Player" type="KinematicBody2D"]
@@ -121,11 +121,11 @@ frame = 2
 playing = true
 
 [node name="FootRange" type="CollisionShape2D" parent="."]
-position = Vector2( 5.83043, 21.3178 )
+position = Vector2( 5.9346, 17.4595 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 5.74367, 12.5643 )
+position = Vector2( 5.74367, 10.724 )
 current = true
 zoom = Vector2( 0.7, 0.7 )
 script = ExtResource( 36 )
@@ -133,7 +133,7 @@ script = ExtResource( 36 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="MeleeRange" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 5.83287, 12.5142 )
+position = Vector2( 6.20093, 11.8823 )
 shape = SubResource( 3 )
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]

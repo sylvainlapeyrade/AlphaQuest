@@ -621,7 +621,6 @@ autowrap = true
 clip_text = true
 
 [node name="Monsters" type="Node2D" parent="TileMap"]
-editor/display_folded = true
 
 [node name="Monster" parent="TileMap/Monsters" instance=ExtResource( 9 )]
 position = Vector2( 72.7295, 297.747 )
@@ -657,7 +656,5 @@ position = Vector2( 1109.67, 1.97743 )
 visible = false
 [connection signal="body_entered" from="TileMap/Chests/ChestSword" to="TileMap/Chests/ChestSword" method="_on_Chest_body_entered"]
 [connection signal="body_entered" from="TileMap/Chests/ChestLock" to="TileMap/Chests/ChestLock" method="_on_Chest_body_entered"]
-[connection signal="body_entered" from="TileMap/Doors/Door" to="TileMap/Doors/Door" method="_on_Door_body_entered"]
 [connection signal="body_exited" from="TileMap/Doors/Door" to="TileMap/Doors/Door" method="_on_Door_body_exited"]
-[connection signal="body_entered" from="TileMap/Doors/Door2" to="TileMap/Doors/Door2" method="_on_Door_body_entered"]
 [connection signal="body_exited" from="TileMap/Doors/Door2" to="TileMap/Doors/Door2" method="_on_Door_body_exited"]

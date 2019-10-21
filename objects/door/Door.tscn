@@ -27,5 +27,5 @@ animation = "opendoor"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 246.133, 159.986 )
 shape = SubResource( 2 )
-[connection signal="body_entered" from="." to="." method="_on_Coin_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]

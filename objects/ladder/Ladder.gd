@@ -8,4 +8,4 @@ func _on_Ladder_body_entered(body):
 		if body.get_name() == "Player":
 			get_tree().change_scene("res://game/level2/Level2.tscn")
 	elif get_owner().get_name() == "Level2":
-			get_tree().change_scene("res://title_screen/TitleScreen.tscn")
+			get_tree().change_scene("res://game/level3/Level3.tscn")

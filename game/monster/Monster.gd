@@ -84,6 +84,14 @@ func on_ai_thinktime_timeout_complete():
 	if player_attack_range:
 		attack()
 
+func _on_AgressionRange_body_entered(body):
+	if body.get_name() == "Player":
+		player_move_range = true
+
+func _on_AgressionRange_body_exited(body):
+	if body.get_name() == "Player":
+		player_move_range = false
+
 func _on_MeleeRange_body_entered(body):
 	if body.get_name() == "Player":
 		player_attack_range = true
@@ -95,19 +103,11 @@ func _on_MeleeRange_body_entered(body):
 			get_node("AnimatedSprite").play("boss_attack")
 
 func _on_MeleeRange_body_exited(body):
-	if body.get_name() == "Player" && get_owner() != null:
+	if get_owner() != null && body.get_name() == "Player":
 		player_attack_range = false
-		if get_owner().get_name() == "Level1": 
+		if get_owner().get_name() == "Level1":
 			get_node("AnimatedSprite").play("bat")
 		elif get_owner().get_name() == "Level2":
 			get_node("AnimatedSprite").play("ghost")
 		elif get_owner().get_name() == "Level3":
 			get_node("AnimatedSprite").play("boss")
-
-func _on_AgressionRange_body_entered(body):
-	if body.get_name() == "Player":
-		player_move_range = true
-
-func _on_AgressionRange_body_exited(body):
-	if body.get_name() == "Player":
-		player_move_range = false

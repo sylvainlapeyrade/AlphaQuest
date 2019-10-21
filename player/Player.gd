@@ -60,6 +60,7 @@ func interpret_input(delta):
 				if parent == "NPC2":
 					if coin_collected >= 10:
 						coin_collected = -10
+						get_owner().get_node("CanvasLayer/GUI/Coin/CoinCounter").set_text(str(coin_collected))
 						get_owner().get_node("TileMap/NPCs/"+parent).take_gold()
 			
 		# Test prevent diagonals movements	

@@ -611,6 +611,7 @@ stream = ExtResource( 7 )
 autoplay = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="GUI" parent="CanvasLayer" instance=ExtResource( 8 )]
 position = Vector2( 1109.67, 1.97743 )

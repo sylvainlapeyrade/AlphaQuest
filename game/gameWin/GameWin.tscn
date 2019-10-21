@@ -13,7 +13,7 @@ modulate = Color( 1, 1, 1, 0.686275 )
 show_behind_parent = true
 margin_right = 1280.0
 margin_bottom = 720.0
-color = Color( 0.913725, 0.121569, 0.121569, 0.686275 )
+color = Color( 0.12549, 0.976471, 0.0745098, 0.686275 )
 
 [node name="GameOverText" type="Label" parent="."]
 margin_left = 340.0
