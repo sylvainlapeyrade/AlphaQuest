@@ -1,5 +1,5 @@
 # AlphaQuest
-RPG 2D Computer Game made with Godot 3 for the course TDDD23 at Linköping University.
+RPG 2D computer game made with Godot 3.
 
 You can consult the trailer of the game here:
 
