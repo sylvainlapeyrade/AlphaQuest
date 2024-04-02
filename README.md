@@ -1,7 +1,7 @@
 # AlphaQuest
-RPG 2D computer game made with Godot 3.
+2D RPG game made with Godot 3.
 
-You can consult the trailer of the game here:
+You can watch the trailer of the game below:
 
 [![AlphaQuest - ScreenCast TDDD23](http://img.youtube.com/vi/kDOf-BziNp0/0.jpg)](http://www.youtube.com/watch?v=kDOf-BziNp0 "AlphaQuest - ScreenCast TDDD23")
 
