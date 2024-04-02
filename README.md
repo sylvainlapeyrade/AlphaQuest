@@ -1,5 +1,5 @@
 # AlphaQuest
-2D RPG game made with Godot 3.
+A 2D RPG game made with Godot 3.
 
 You can watch the trailer of the game below:
 
